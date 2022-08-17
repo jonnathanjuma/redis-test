@@ -23,6 +23,15 @@ jobs:
         options: --entrypoint redis-server
 
     steps:
+      - name: Setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.7.11
+      - name: Code Style Checks - Python
+        run: |
+          pip install --upgrade pip
+          pip install pytest
+
       - name: Redis - Basic Test
         run: pytest test.py
       - name: Pip cache
