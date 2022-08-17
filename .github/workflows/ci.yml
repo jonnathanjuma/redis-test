@@ -26,7 +26,7 @@ jobs:
       - name: Setup python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.7.11
+          python-version: '3.10' 
       - name: Code Style Checks - Python
         run: |
           pip install --upgrade pip
