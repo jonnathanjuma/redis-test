@@ -49,5 +49,5 @@ jobs:
 
     - run: node client.js
       env:
-        REDIS_HOST: localhost
-        REDIS_PORT: ${{ job.services.redis.ports[6379] }}
+        REDIS_HOST: redis
+        REDIS_PORT: 6379
