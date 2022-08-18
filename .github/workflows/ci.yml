@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     container:
-      image:  python:3.7.11
+      image:  python:3.7
 
     services:
       redis:
@@ -24,12 +24,13 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: Set up Python
-        uses: cclauss/GitHub-Action-for-pytest@0.5.0
+      # - name: Set up Python
+      #   uses: cclauss/GitHub-Action-for-pytest@0.5.0
       - name: Test with pytest
         env:
           REDISTOGO_URL: ${{ secrets.REDISTOGO_URL }}
         run: |
-          pip install pytest
-          pip install redis
-          pytest test.py 
+          ( pip install redis==3.5.3 && 
+            pip install pytest && 
+            echo REDISTOGO_URL="$REDISTOGO_URL" &&
+            pytest test.py )
