@@ -12,8 +12,8 @@ jobs:
   runner-job:
     runs-on: ubuntu-latest
 
-    container:
-      image:  python:3.7
+    # container:
+    #   image:  python:3.7
 
     services:
       redis:
@@ -23,9 +23,13 @@ jobs:
         options: --entrypoint redis-server
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v1
       # - name: Set up Python
       #   uses: cclauss/GitHub-Action-for-pytest@0.5.0
+      - name: Setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.7.11
       - name: Test with pytest
         env:
           REDISTOGO_URL: ${{ secrets.REDISTOGO_URL }}
