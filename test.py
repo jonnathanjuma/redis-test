@@ -1,7 +1,7 @@
 import redis
 
 def test_redis_basic():
-    redis_url = 'redis://redis:6379'
+    redis_url = os.environ['REDISTOGO_URL']
     print(f'Redis Connection url from env_var: {redis_url}')
     redis_conn = redis.from_url(redis_url)
 
