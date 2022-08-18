@@ -27,6 +27,8 @@ jobs:
       - name: Set up Python
         uses: cclauss/GitHub-Action-for-pytest@0.5.0
       - name: Test with pytest
+        env:
+          REDISTOGO_URL: ${{ secrets.REDISTOGO_URL }}
         run: |
           pip install pytest
           pip install redis
