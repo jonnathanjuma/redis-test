@@ -23,7 +23,7 @@ jobs:
         options: --entrypoint redis-server
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v3
       # - name: Set up Python
       #   uses: cclauss/GitHub-Action-for-pytest@0.5.0
       - name: Setup python
