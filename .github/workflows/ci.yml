@@ -38,3 +38,11 @@ jobs:
             pip install pytest && 
             echo REDISTOGO_URL="$REDISTOGO_URL" &&
             pytest test.py )
+      - name: Install Binary Dependencies
+        run: |
+           apt-get update
+           apt-get install -y software-properties-common
+           apt-get install -y libhunspell-dev
+           apt-get install -y hunspell-es
+           apt-get install -y awscli
+           apt-get install -y coinor-cbc coinor-libcbc-dev
