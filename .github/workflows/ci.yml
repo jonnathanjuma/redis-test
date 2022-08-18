@@ -27,12 +27,12 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.8'
+          python-version: '3.7'
       - name: Install dependencies
         run: |
-          pip install -r requirements.txt
+          python install -r requirements.txt
       - name: Test with pytest
         run: |
-          pip install pytest
-          pip install pytest-cov
+          python install pytest
+          python install pytest-cov
           pytest test.py 
