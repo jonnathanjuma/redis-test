@@ -12,3 +12,5 @@ def test_redis_basic():
     # retrieve value
     retrieved_val = redis_conn.get('test_basic')
     print(f'Retrieved value: {retrieved_val}')
+
+   # redis://redis:6379
