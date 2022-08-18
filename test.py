@@ -1,4 +1,5 @@
 import redis
+import os
 
 def test_redis_basic():
     redis_url = os.environ['REDISTOGO_URL']
