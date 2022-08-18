@@ -25,15 +25,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: 3.8.2
-      - name: Install dependencies
-        run: |
-          python install --upgrade pip
-          python install -r requirements.txt
+        uses: cclauss/GitHub-Action-for-pytest@0.5.0
       - name: Test with pytest
         run: |
-          python install pytest
-          python install pytest-cov
           pytest test.py 
